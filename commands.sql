@@ -33,3 +33,10 @@ WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'fortnite$';
 UPDATE login_information
 SET password = AES_ENCRYPT('newpasswordmoney', @key_str, @init_vector)
 WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'disneyisgreat!$';
+
+-- Command 6: Delete user account from the URL
+DELETE user_information, login_information, website
+FROM user_information
+JOIN login_information USING (database_id)
+JOIN website USING (database_id)
+WHERE website_url = 'https://www.facebook.com';
