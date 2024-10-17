@@ -22,3 +22,10 @@ SELECT database_id, username, time_created
 FROM login_information
 JOIN website USING (database_id)
 WHERE website_url LIKE 'https%';
+
+-- Command 4: Update website URL for specific user from their password
+UPDATE website
+JOIN login_information USING (database_id)
+SET website_url = 'https://www.fortnite.com'
+WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'fortnite$';
+
