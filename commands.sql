@@ -11,3 +11,8 @@ INSERT INTO login_information
 VALUES
   (0, "stevenbehrens", AES_ENCRYPT("redditpassword400$", @key_str, @init_vector), '2024-10-10 08:15:00');
 
+-- Command 2: Get password for specific user from website
+SELECT CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) AS 'Decrypted Password'
+FROM login_information
+JOIN website USING (database_id)
+WHERE website_url = 'https://www.netflix.com';
