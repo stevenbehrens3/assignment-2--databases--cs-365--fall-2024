@@ -40,3 +40,10 @@ FROM user_information
 JOIN login_information USING (database_id)
 JOIN website USING (database_id)
 WHERE website_url = 'https://www.facebook.com';
+
+-- Command 7: Delete user account from password
+DELETE user_information, login_information, website
+FROM user_information
+JOIN login_information USING (database_id)
+JOIN website USING (database_id)
+WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'mathmaster!$';
