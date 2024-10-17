@@ -29,3 +29,7 @@ JOIN login_information USING (database_id)
 SET website_url = 'https://www.fortnite.com'
 WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'fortnite$';
 
+-- Command 5: Change user’s password from the old password
+UPDATE login_information
+SET password = AES_ENCRYPT('newpasswordmoney', @key_str, @init_vector)
+WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'disneyisgreat!$';
