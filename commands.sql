@@ -16,3 +16,9 @@ SELECT CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) AS 'Decrypted
 FROM login_information
 JOIN website USING (database_id)
 WHERE website_url = 'https://www.netflix.com';
+
+-- Command 3: Get login information from HTTPS
+SELECT database_id, username, time_created
+FROM login_information
+JOIN website USING (database_id)
+WHERE website_url LIKE 'https%';
