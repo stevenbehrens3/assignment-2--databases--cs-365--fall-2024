@@ -26,3 +26,8 @@ CREATE TABLE IF NOT EXISTS login_information (
     time_created       DATETIME         DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (database_id)
 );
+
+SET block_encryption_mode = 'aes-256-cbc';
+SET @key_str = UNHEX(SHA2('encryption_key', 256));
+SET @init_vector = RANDOM_BYTES(16);
+
