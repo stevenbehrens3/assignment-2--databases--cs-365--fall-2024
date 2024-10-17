@@ -11,3 +11,10 @@ CREATE TABLE IF NOT EXISTS user_information (
     notes           VARCHAR(500)               ,
     PRIMARY KEY (database_id)
 );
+
+CREATE TABLE IF NOT EXISTS website (
+    database_id        SMALLINT        NOT NULL AUTO_INCREMENT,
+    website_name       VARCHAR(100)    NOT NULL,
+    website_url        VARCHAR(200)    NOT NULL,
+    PRIMARY KEY (database_id)
+);
