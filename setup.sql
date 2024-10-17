@@ -31,3 +31,14 @@ SET block_encryption_mode = 'aes-256-cbc';
 SET @key_str = UNHEX(SHA2('encryption_key', 256));
 SET @init_vector = RANDOM_BYTES(16);
 
+INSERT INTO user_information (first_name, last_name, email, notes) VALUES
+    ('Steven', 'Behrens', 'steven.behrens@example.com','Home email'),
+    ('Bob', 'Behrens', 'bob.behrens@example.com', 'Work email'),
+    ('Brian', 'Behrens', 'brian.behrens@example.com', 'school email'),
+    ('Susan', 'Behrens', 'susan.behrens@example.com', 'personal email'),
+    ('Steven', 'Behrens', 'steven.behrens@example.com', 'Home email'),
+    ('Bob', 'Behrens', 'bob.behrens@example.com', 'Work email'),
+    ('Brian', 'Behrens', 'brian.behrens@example.com', 'school email'),
+    ('Susan', 'Behrens', 'susan.behrens@example.com', 'personal email'),
+    ('Steven', 'Behrens', 'steven.behrens@example.com', 'Home email'),
+    ('Bob', 'Behrens', 'bob.behrens@example.com', 'Work email');
