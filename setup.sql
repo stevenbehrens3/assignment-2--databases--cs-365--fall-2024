@@ -42,3 +42,15 @@ INSERT INTO user_information (first_name, last_name, email, notes) VALUES
     ('Susan', 'Behrens', 'susan.behrens@example.com', 'personal email'),
     ('Steven', 'Behrens', 'steven.behrens@example.com', 'Home email'),
     ('Bob', 'Behrens', 'bob.behrens@example.com', 'Work email');
+
+INSERT INTO website (website_name, website_url) VALUES
+    ('Amazon', 'https://www.amazon.com'),
+    ('Netflix', 'https://www.netflix.com'),
+    ('Facebook', 'https://www.facebook.com'),
+    ('Instagram', 'https://www.instagram.com'),
+    ('DisneyPlus', 'https://www.disneyplus.com'),
+    ('Frontier', 'https://www.frontier.com'),
+    ('Snapchat', 'https://www.snapchat.com'),
+    ('Bing', 'https://www.bing.com'),
+    ('Redbull', 'https://www.redbull.com'),
+    ('Hulu', 'https://www.hulu.com');
