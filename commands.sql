@@ -8,3 +8,7 @@ CREATE PROCEDURE INSERT_OR_UPDATE(
    IN password VARCHAR(30),
    IN comments VARCHAR(1500)
    )
+BEGIN
+INSERT INTO user (first_name, last_name, email)
+VALUES (first_name, last_name, email)
+ON DUPLICATE KEY UPDATE first_name = VALUES(first_name), last_name = VALUES(last_name);
