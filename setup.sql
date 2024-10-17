@@ -54,3 +54,15 @@ INSERT INTO website (website_name, website_url) VALUES
     ('Bing', 'https://www.bing.com'),
     ('Redbull', 'https://www.redbull.com'),
     ('Hulu', 'https://www.hulu.com');
+
+INSERT INTO login_information (username, password, time_created) VALUES
+    ('steveb', AES_ENCRYPT('fortnite$', @key_str, @init_vector), '2024-04-15 10:30:00'),
+    ('bobbyb', AES_ENCRYPT('work123$', @key_str, @init_vector), '2022-12-12 09:30:00'),
+    ('brainiac', AES_ENCRYPT('mathmaster!$', @key_str, @init_vector), '2023-08-18 17:45:00'),
+    ('susanb', AES_ENCRYPT('technology@@', @key_str, @init_vector), '2023-09-05 12:00:00'),
+    ('stevenbehrens', AES_ENCRYPT('disneyisgreat!$', @key_str, @init_vector), '2024-04-15 10:30:00'),
+    ('bobbyb', AES_ENCRYPT('internetisexpensive$', @key_str, @init_vector), '2022-12-12 09:30:00'),
+    ('brainiac', AES_ENCRYPT('idontusethis!$', @key_str, @init_vector), '2023-08-18 17:45:00'),
+    ('susanb', AES_ENCRYPT('nogoogle@@', @key_str, @init_vector), '2023-09-05 12:00:00'),
+    ('steveb', AES_ENCRYPT('redbull!!!!$', @key_str, @init_vector), '2024-04-15 10:30:00'),
+    ('bobbyb', AES_ENCRYPT('thisisalotofmoney$', @key_str, @init_vector), '2022-12-12 09:30:00');
