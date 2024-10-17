@@ -11,13 +11,13 @@ INSERT INTO login_information
 VALUES
   (0, "stevenbehrens", AES_ENCRYPT("redditpassword400$", @key_str, @init_vector), '2024-10-10 08:15:00');
 
--- Command 2: Get password for specific user from website
+-- Command 2: Get password for specific user from the website
 SELECT CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) AS 'Decrypted Password'
 FROM login_information
 JOIN website USING (database_id)
 WHERE website_url = 'https://www.netflix.com';
 
--- Command 3: Get login information from HTTPS
+-- Command 3: Get login information from HTTPS websites
 SELECT database_id, username, time_created
 FROM login_information
 JOIN website USING (database_id)
@@ -29,7 +29,7 @@ JOIN login_information USING (database_id)
 SET website_url = 'https://www.fortnite.com'
 WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'fortnite$';
 
--- Command 5: Change user’s password from the old password
+-- Command 5: Change user password from the old password
 UPDATE login_information
 SET password = AES_ENCRYPT('newpasswordmoney', @key_str, @init_vector)
 WHERE CAST(AES_DECRYPT(password, @key_str, @init_vector) AS CHAR) = 'disneyisgreat!$';

@@ -20,10 +20,10 @@ CREATE TABLE IF NOT EXISTS website (
 );
 
 CREATE TABLE IF NOT EXISTS login_information (
-    database_id        SMALLINT        NOT NULL AUTO_INCREMENT,
+    database_id        SMALLINT            NOT NULL AUTO_INCREMENT,
     username           VARCHAR(80)         NOT NULL,
-    password           VARBINARY(250) NOT NULL,
-    time_created       DATETIME         DEFAULT CURRENT_TIMESTAMP,
+    password           VARBINARY(250)      NOT NULL,
+    time_created       DATETIME            DEFAULT CURRENT_TIMESTAMP,
     PRIMARY KEY (database_id)
 );
 
